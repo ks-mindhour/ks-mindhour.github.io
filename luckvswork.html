@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome To MindHour</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+    	#firsthalf{
+    		background-color: black;
+    		background-size: cover;
+    		
+    	}
+    </style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-xs-12" id="firsthalf">
+			</div>
+			<div class="col-md-6 col-xs-12" id="secondhalf">
+			</div> 
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var elem = document.getElementById("firsthalf");
+		elem.style.height = window.innerHeight + "px";
+		console.log(window.innerHeight);
+
+
+		$(window).resize(function(){
+   			 var elem = document.getElementById("firsthalf");
+			elem.style.height = window.innerHeight + "px";
+			console.log(window.innerHeight);
+		});
+	</script>
+</body>
+</html>
