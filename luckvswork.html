@@ -6,6 +6,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
 
 
     <!-- jQuery -->
@@ -15,34 +16,82 @@
     <script src="js/bootstrap.min.js"></script>
 
     <style type="text/css">
+    	body{
+    		font-family: "Josefin Sans";
+    	}
     	#firsthalf{
-    		background-color: black;
+    		background-color: #FC6E51;
     		background-size: cover;
     		
+    	}
+    	#image{
+    		display: block;
+    		margin:auto auto;
+    		margin-top: 10%;
+    		z-index: 1000;
+    		width: 70%;
+    	}
+    	#secondhalf{
+    		background-color: #F6BB42;
+    		overflow: hidden;
+    	}
+    	#top-left,#top-right{
+    		height: 100px;
+    		background-color: #F6BB42;
+    	}
+    	#top-right{
+    		background-color: #FC6E51;
+    	}
+    	h1{
+    		text-align: center;
+    		font-size: 48px;
     	}
     </style>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row">
+			<div class="col-md-6 col-xs-12" id="top-left">
+				<h1>Hard Work</h1>
+			</div>
+			<div class="col-md-6 col-xs-12" id="top-right">
+				<h1>Luck</h1>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-6 col-xs-12" id="firsthalf">
+				<img id="image" class="img-fluid" src="./img/strategy.png">	
 			</div>
 			<div class="col-md-6 col-xs-12" id="secondhalf">
+				<img id="image" class="img-fluid" src="./img/knight.png">
 			</div> 
 		</div>
 	</div>
 
 	<script type="text/javascript">
 		var elem = document.getElementById("firsthalf");
-		elem.style.height = window.innerHeight + "px";
-		console.log(window.innerHeight);
+		var elem2 = document.getElementById("secondhalf");
+		var x = window.innerHeight;
+   		x = x - 100;
+		elem.style.height = x + "px";
+		elem2.style.height = x + "px";
+		console.log(x);
 
 
 		$(window).resize(function(){
-   			 var elem = document.getElementById("firsthalf");
-			elem.style.height = window.innerHeight + "px";
-			console.log(window.innerHeight);
+   			var elem = document.getElementById("firsthalf");
+   			var elem2 = document.getElementById("secondhalf");
+   			var x = window.innerHeight;
+   			x = x - 100;
+			elem.style.height = x + "px";
+			elem2.style.height = x + "px";
+			console.log(x);
 		});
+
+		$("#image").on("click",function(){
+			console.log('working');
+			window.open('xyz.html');
+		})
 	</script>
 </body>
 </html>
